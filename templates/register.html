@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <center>
+  <h3>
+    Registration Page
+  </h3>
+  </center>
+<br>
+<br>
+  <form method="post">
+    <div class="form-group">
+      <label for="first_name">First Name</label>
+      <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Your First Name" required>
+    </div>
+    <div class="form-group">
+      <label for="last_name">Last Name</label>
+      <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Your Last Name" required>
+    </div>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="number" name="age" class="form-control" id="age" placeholder="Enter your age." required>
+    </div>
+    <div class="form-group">
+      <label for="dob">Date of Birth</label>
+      <input type="date" name="dob" class="form-control" id="dob" placeholder="Enter your Date of Birth" required>
+    </div>
+    <div class="form-group">
+      <label for="address_line1">Address Line 1</label>
+      <input type="text" name="address_line1" class="form-control" id="address_line1" placeholder="Your Address" required>
+    </div>
+    <div class="form-group">
+      <label for="address_line2">Address Line 2</label>
+      <input type="text" name="address_line2" class="form-control" id="address_line2" placeholder="Your Address">
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="number" name="phone" class="form-control" id="phone" placeholder="Enter Mobile Number" required>
+    </div>
+    <center>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <a href="{{ url_for('homepage') }}"><button type="button" class="btn btn-secondary">Cancel</button></a>
+
+    </center>
+    <br>
+    <br>
+  </form>
+
+{% endblock %}

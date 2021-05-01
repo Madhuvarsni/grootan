@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+        <h3>
+            Login
+        </h3>
+        <div>
+            <br>
+          {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                {% for category, message in messages %}
+                    {% if category == 'message' %}
+                      <div class="alert alert-warning" role="alert">
+                    {% else %}
+                      <div class="alert alert-{{ category }}" role="alert">
+                    {% endif %}
+                      {{ message }}
+                    </div>
+                {% endfor %}
+              {% endif %}
+          {% endwith %}
+        </div>
+        <form method="post">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">Check your username well and good.</div>
+          </div>
+          <div class="mb-3">
+            <label for="_password" class="form-label" >Password</label>
+            <input type="password" class="form-control" id="_password" name="_password">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+{% endblock %}

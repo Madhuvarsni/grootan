@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<center>
+    <a href="{{ url_for('register') }}"><button class="btn btn-primary">Register</button></a>
+    </center>
+    <br>
+    {% if dictionary %}
+      <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Age</th>
+              <th scope="col">Phone</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for i in dictionary %}
+
+            <tr>
+              <th scope="row">{{ i["id"] }}</th>
+              <td><a href="profile/{{ i['id'] }}">{{ i["first_name"] }}</a></td>
+              <td>{{ i["age"] }}</td>
+              <td>{{ i["more"]["phone"] }}</td>
+            </tr>
+
+          {% endfor %}
+          </tbody>
+        </table>
+    {% else %}
+        <center><h4>No records found. Create new record by clicking register.</h4></center>
+    {% endif %}
+
+{% endblock %}
